@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../common/scripts/jquery-1.4.4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="" />
+<title>Document</title>
+</head>
+<body>
+<ul class="bsCapitalList">
+	<li class="on"><a href="#capital1" class="t1">자동차할부 (신차)</a></li>
+	<li><a href="#capital2" class="t2">BS 소호론</a></li>
+	<li><a href="#capital3" class="t3">BS 무담보APT론</a></li>
+	<li><a href="#capital4" class="t4">BS 무담보주택론</a></li>
+	<li><a href="#capital5" class="t5">BS 무담보상가론</a></li>
+</ul>
+
+<div id="capital1"></div>
+<div id="capital2"></div>
+<div id="capital3"></div>
+<div id="capital4"></div>
+<div id="capital5"></div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".bsCapitalList > li > a").on("click",function(){
+		var capitalContentUnit = "#"+($(this).attr("href").split("#")[1]);
+
+		$(".bsCapitalList > li").removeClass("on");
+		$(this).parent().addClass("on");
+		$(".capitalCont").hide();
+		$(capitalContentUnit).show();
+
+		return false;
+	});
+});
+</script>
+</body>
+</html>
